@@ -14,10 +14,9 @@ import FormSuccess from '../form-success'
 import { useSearchParams } from 'next/navigation'
 import { newPassword } from '@/actions/new-password'
 
-export const NewPasswordForm = () => {
+ const NewPasswordForm = () => {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
-  console.log("token",token)
 
   const [error, setError] = useState<string | undefined>("")
   const [success, setSuccess] = useState<string | undefined>("")
@@ -37,7 +36,6 @@ export const NewPasswordForm = () => {
     startTransition(()=> {
       newPassword(values, token)
       .then((data)=> {
-        console.log(data)
           setError(data?.error)
           setSuccess(data?.success)
       })
@@ -80,3 +78,4 @@ export const NewPasswordForm = () => {
 }
 
 
+export default NewPasswordForm
