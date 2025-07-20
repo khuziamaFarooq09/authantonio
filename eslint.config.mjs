@@ -11,6 +11,14 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // 👇 Add your custom rule levels here
+  {
+    rules: {
+      "no-console": "warn", // warning instead of error
+      "react-hooks/exhaustive-deps": "warn", // if this one bothers you
+    },
+  },
 ];
 
 export default eslintConfig;
