@@ -6,7 +6,6 @@ import { UserRole } from '@prisma/client';
 import FormSuccess from '@/components/form-success';
 import { Button } from '@/components/ui/button';
 import { admin } from '@/actions/admin';
-import { error } from 'console';
 const AdminPage = () => {
 
     const onServerActionClick = ( )=> {
